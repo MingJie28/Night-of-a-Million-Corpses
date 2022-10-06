@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     {
         Time.timeScale = 1f;
         rb = this.GetComponent<Rigidbody2D>();
+        //locate player
         player = GameObject.FindWithTag("Player").transform;
     }
 
@@ -32,6 +33,7 @@ public class Enemy : MonoBehaviour
     {
         moveCharacter(movement);
     }
+
     void moveCharacter(Vector2 dir)
     {
         rb.MovePosition((Vector2)transform.position + (dir * moveSpeed * Time.deltaTime));
