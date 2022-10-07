@@ -1,41 +1,69 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
-    public Transform player;
-    public float moveSpeed;
-    private Rigidbody2D rb;
-    private Vector2 movement;
-    public Vector3 dir;
+    Transform targetDestination;
+    GameObject targetGameobject;
+    Character targetCharacter;
+    [SerializeField] float speed;
 
+    Rigidbody2D rgdbd2d;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] int hp = 999;
+    [SerializeField] int damage = 1;
+    [SerializeField] int experience_reward = 400;
+
+    private void Awake()
     {
-        Time.timeScale = 1f;
-        rb = this.GetComponent<Rigidbody2D>();
-        //locate player
-        player = GameObject.FindWithTag("Player").transform;
+        rgdbd2d = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetTarget(GameObject target) 
     {
-        dir = player.position - transform.position;
-        float angle = Mathf.Atan(dir.y) * Mathf.Rad2Deg;
-        dir.Normalize();
-        movement = dir;
+        targetGameobject = target;
+        targetDestination = target.transform;
     }
 
     private void FixedUpdate()
     {
-        moveCharacter(movement);
+        Vector3 direction = (targetDestination.position - transform.position).normalized;
+        rgdbd2d.velocity = direction * speed;
     }
 
-    void moveCharacter(Vector2 dir)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        rb.MovePosition((Vector2)transform.position + (dir * moveSpeed * Time.deltaTime));
+        if (collision.gameObject == targetGameobject) 
+        {
+            Attack();
+        }
+    }
+
+    internal void TakeDamage(object damage)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void Attack()
+    {
+        if (targetCharacter == null) 
+        {
+            targetCharacter = targetGameobject.GetComponent<Character>();
+        }
+
+        targetCharacter.TakeDamage(damage);
+    }
+    public void TakeDamage(int damage) 
+    {
+        hp -= damage;
+
+        if (hp < 1) 
+        {
+            targetGameobject.GetComponent<Level>().AddExperience(experience_reward);
+            GetComponent<DropOnDestroy>().CheckDrop();
+            Destroy(gameObject);
+        }
     }
 }
