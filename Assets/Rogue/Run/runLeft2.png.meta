@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3158195de71d61846a7d2fdd6e9ea5dd
+guid: 65ed2dda6d0eb6141866bbc863e8581a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -63,7 +63,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: run3_0
+      name: runLeft2_0
       rect:
         serializedVersion: 2
-        x: 25
+        x: 65
         y: 19
-        width: 38
-        height: 49
+        width: 47
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63dc471c8f854d3478ba140dba9ca14f
-      internalID: 329282910
+      spriteID: 7af4b59702984994e808fc2cf4543766
+      internalID: 1099528210
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      run3_0: 329282910
+      runLeft2_0: 1099528210
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

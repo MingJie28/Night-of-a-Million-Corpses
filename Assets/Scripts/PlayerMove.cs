@@ -12,16 +12,16 @@ public class PlayerMove : MonoBehaviour
     public float lastHorizontalVector;
     [HideInInspector]
     public float lastVerticalVector;
+    private float lastHoriz;
 
     [SerializeField] float speed = 3f;
 
-    Animate animate;
+    public Animator animator;
 
     private void Awake()
     {
         rgbd2d = GetComponent<Rigidbody2D>();
         movementVector = new Vector3();
-        animate = GetComponent<Animate>();
     }
 
     private void Start()
@@ -45,10 +45,26 @@ public class PlayerMove : MonoBehaviour
             lastVerticalVector = movementVector.y;
         }
 
-        animate.horizontal = movementVector.x;
 
         movementVector *= speed;
 
         rgbd2d.velocity = movementVector;
+
+        float horiz = Input.GetAxis("Horizontal");
+        float vert = Input.GetAxis("Vertical");
+        Vector2 newVelocity = new Vector2(horiz, vert);
+        animator.SetFloat("Horizontal", horiz);
+        animator.SetFloat("Speed", newVelocity.sqrMagnitude);
+
+        //find last horiz
+        
+        if (horiz != 0)
+        {
+            lastHoriz = horiz;
+        }
+        if (vert != 0)
+        {
+            animator.SetFloat("Horizontal", lastHoriz);
+        }
     }
 }
