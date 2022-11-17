@@ -14,6 +14,10 @@ public class Timer : MonoBehaviour
     private TextMeshProUGUI firstSecond;
     [SerializeField] 
     private TextMeshProUGUI secondSecond;
+    public GameObject winPanel;
+    [SerializeField] GameObject weaponParent;
+    public static bool timerStop = false;
+    public GameObject Player;
 
     // Start is called before the first frame update
     void Start()
@@ -24,13 +28,18 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        UpdateTimerDisplay(timer);
+        if (timerStop == false)
+        {
+            timer += Time.deltaTime;
+            UpdateTimerDisplay(timer);
+            Win(timer);
+        }
     }
 
     private void ResetTimer()
     {
         timer = timeDuration;
+        timerStop = false;
     }
 
     private void UpdateTimerDisplay(float time)
@@ -43,5 +52,18 @@ public class Timer : MonoBehaviour
         secondMinute.text = currentTime[1].ToString();
         firstSecond.text = currentTime[2].ToString();
         secondSecond.text = currentTime[3].ToString();
+    }
+
+    public void Win(float time)
+    {
+        float minutes = Mathf.FloorToInt(time / 60);
+        if (minutes == 30)
+        {
+            Debug.Log("Win");
+            winPanel.SetActive(true);
+            weaponParent.SetActive(false);
+            timerStop = true;
+            Player.SetActive(false);
+        }
     }
 }

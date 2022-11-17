@@ -12,9 +12,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
     Rigidbody2D rgdbd2d;
 
-    [SerializeField] int hp = 999;
-    [SerializeField] int damage = 1;
-    [SerializeField] int experience_reward = 400;
+    [SerializeField] int hp;
+    [SerializeField] int damage;
+    [SerializeField] int experience_reward;
 
     private void Awake()
     {
@@ -33,9 +33,9 @@ public class Enemy : MonoBehaviour, IDamageable
         rgdbd2d.velocity = direction * speed;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == targetGameobject) 
+        if (collision.gameObject.CompareTag("Player")) 
         {
             Attack();
         }
