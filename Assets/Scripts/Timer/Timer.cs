@@ -33,6 +33,7 @@ public class Timer : MonoBehaviour
             timer += Time.deltaTime;
             UpdateTimerDisplay(timer);
             Win(timer);
+            mobSpawner(timer);
         }
     }
 
@@ -64,6 +65,15 @@ public class Timer : MonoBehaviour
             weaponParent.SetActive(false);
             timerStop = true;
             Player.SetActive(false);
+        }
+    }
+
+    public void mobSpawner(float time)
+    {
+        float minutes = Mathf.FloorToInt(time / 60);
+        if (minutes == 1)
+        {
+            EnemiesManager.enemy2 = true;
         }
     }
 }

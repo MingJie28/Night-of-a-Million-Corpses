@@ -5,11 +5,16 @@ using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
+    [SerializeField] GameObject enemyBat;
+    [SerializeField] GameObject enemyTest;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     GameObject player;
     float timer;
+
+    public static bool enemy1 = true;
+    public static bool enemy2 = false;
+    
 
     private void Start()
     {
@@ -20,13 +25,20 @@ public class EnemiesManager : MonoBehaviour
     {
         timer -= Time.deltaTime;
         if (timer < 0f) 
-        {
-            SpawnEnemy();
+        {   
+            if (enemy1 == true)
+            {
+                SpawnEnemy(enemyBat);
+            }
+            if(enemy2 == true)
+            {
+                SpawnEnemy(enemyTest);
+            }
             timer = spawnTimer;
         }
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(GameObject enemy)
     {
         Vector3 position = GenerateRandomPosition();
 
