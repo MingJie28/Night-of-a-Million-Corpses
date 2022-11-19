@@ -10,14 +10,4 @@ public class StartGame : MonoBehaviour
         SceneManager.LoadScene("Essential", LoadSceneMode.Single);
         SceneManager.LoadScene(stageToPlay, LoadSceneMode.Additive);
     }
-
-    public void StartTutorial()
-    {
-        SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
-    }
-
-    public void Menu()
-    {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
-    }
 }
