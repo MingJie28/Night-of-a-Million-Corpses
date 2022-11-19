@@ -28,7 +28,7 @@ public class EnemiesManager : MonoBehaviour
         {
             if (enemy1 == true)
             {
-                SpawnEnemy(Ooze);
+                SpawnEnemy(enemyBat);
             }
             if (enemy2 == true)
             {
