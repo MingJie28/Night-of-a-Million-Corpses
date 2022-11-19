@@ -15,4 +15,9 @@ public class StartGame : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial", LoadSceneMode.Single);
     }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+    }
 }
