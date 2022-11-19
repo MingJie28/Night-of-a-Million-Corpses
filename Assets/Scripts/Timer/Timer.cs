@@ -15,7 +15,6 @@ public class Timer : MonoBehaviour
     [SerializeField] 
     private TextMeshProUGUI secondSecond;
     public GameObject winPanel;
-    [SerializeField] GameObject weaponParent;
     public static bool timerStop = false;
     public GameObject Player;
 
@@ -61,10 +60,10 @@ public class Timer : MonoBehaviour
         if (minutes == 30)
         {
             Debug.Log("Win");
-            winPanel.SetActive(true);
-            weaponParent.SetActive(false);
-            timerStop = true;
             Player.SetActive(false);
+            winPanel.SetActive(true);
+            timerStop = true;
+           
         }
     }
 

@@ -31,7 +31,7 @@ public class Character : MonoBehaviour
     public void TakeDamage(int damage) 
     {
         if (isDead == true) { return; }
-        ApplyArmor(ref damage);
+        //ApplyArmor(ref damage);
 
         currentHp -= damage;
 

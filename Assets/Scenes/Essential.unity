@@ -852,12 +852,12 @@ RectTransform:
   - {fileID: 2047581567}
   - {fileID: 554235696}
   - {fileID: 1687079796}
+  - {fileID: 1851253294}
   - {fileID: 651778558}
   - {fileID: 1453991722}
   - {fileID: 1106936213}
   - {fileID: 871916654}
   - {fileID: 1731605321}
-  - {fileID: 1851253294}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -883,7 +883,6 @@ MonoBehaviour:
   firstSecond: {fileID: 1293856626}
   secondSecond: {fileID: 1684367066}
   winPanel: {fileID: 1731605320}
-  weaponParent: {fileID: 411303824}
   Player: {fileID: 773555298}
 --- !u!1 &296335408
 GameObject:
@@ -982,6 +981,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 296335413}
+        m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+        m_MethodName: upgradeWeapon
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 54a20fe220ca1c4449e39f16c0d58a56, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UpgradeData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &296335411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1033,6 +1044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 1512133809}
+  weapon: {fileID: 0}
 --- !u!1 &305322813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1342,8 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1063227357}
   m_Father: {fileID: 773555301}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1991,6 +2004,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 542803014}
+        m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+        m_MethodName: upgradeWeapon
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 585a54f1289a5a34e8452faa49872055, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UpgradeData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &542803012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2042,6 +2067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 2131802839}
+  weapon: {fileID: 0}
 --- !u!1 &554235695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,6 +2203,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554235695}
   m_CullTransparentMesh: 1
+--- !u!1001 &568717586
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 411303825}
+    m_Modifications:
+    - target: {fileID: 3058700890500376776, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_Name
+      value: wpn_Whip
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376782, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: weaponStats.damage
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376782, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: weaponStats.timeToAttack
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
 --- !u!1 &573654556
 GameObject:
   m_ObjectHideFlags: 0
@@ -2636,6 +2729,7 @@ Transform:
   m_Children:
   - {fileID: 411303825}
   - {fileID: 2013237399}
+  - {fileID: 1675469273}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2729,7 +2823,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 651778557}
-  weaponParent: {fileID: 411303824}
   Player: {fileID: 773555298}
 --- !u!114 &773555309
 MonoBehaviour:
@@ -3144,6 +3237,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050952823}
   m_CullTransparentMesh: 1
+--- !u!4 &1063227357 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+  m_PrefabInstance: {fileID: 568717586}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1063227358 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3058700890500376782, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
+  m_PrefabInstance: {fileID: 568717586}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27391b9e34d3151458444cab0e5dabba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1096883883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,6 +3765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 2108290421}
+  weapon: {fileID: 0}
 --- !u!1 &1162935165
 GameObject:
   m_ObjectHideFlags: 0
@@ -4305,6 +4415,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1293995124}
+        m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
+        m_MethodName: upgradeWeapon
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 3252aa20090b47c448169dfaed7c799f, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UpgradeData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1293995122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4356,6 +4478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 472700338}
+  weapon: {fileID: 1063227358}
 --- !u!1 &1308141248
 GameObject:
   m_ObjectHideFlags: 0
@@ -5032,13 +5155,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675469270}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6666667, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 773555301}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1684367065
 GameObject:
@@ -5745,7 +5868,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.8579767, y: 1}
+    m_SensorSize: {x: 2.0276244, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
