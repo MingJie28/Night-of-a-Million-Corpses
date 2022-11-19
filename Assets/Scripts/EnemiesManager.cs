@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemiesManager : MonoBehaviour
 {
     [SerializeField] GameObject enemyBat;
-    [SerializeField] GameObject enemyTest;
+    [SerializeField] GameObject Ooze;
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     GameObject player;
@@ -25,14 +25,14 @@ public class EnemiesManager : MonoBehaviour
     {
         timer -= Time.deltaTime;
         if (timer < 0f) 
-        {   
+        {
             if (enemy1 == true)
             {
                 SpawnEnemy(enemyBat);
             }
-            if(enemy2 == true)
+            if (enemy2 == true)
             {
-                SpawnEnemy(enemyTest);
+                SpawnEnemy(Ooze);
             }
             timer = spawnTimer;
         }

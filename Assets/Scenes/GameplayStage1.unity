@@ -4031,9 +4031,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBat: {fileID: 7521946697371745102, guid: b035333575c93454a9f8919a51d402df, type: 3}
-  enemyTest: {fileID: 7521946697371745102, guid: 760224b62dbd84c488ee1c95336497f2, type: 3}
+  Ooze: {fileID: 3189155561585079386, guid: dda486c930b0c3640a01505886ed35f7, type: 3}
   spawnArea: {x: 15, y: 8}
-  spawnTimer: 2
+  spawnTimer: 5
 --- !u!4 &1617427584
 Transform:
   m_ObjectHideFlags: 0

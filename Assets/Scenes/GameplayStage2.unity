@@ -3960,7 +3960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6775a9af7e6bc47af23f5b352f2981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 7521946697371745102, guid: b035333575c93454a9f8919a51d402df, type: 3}
+  enemyBat: {fileID: 7521946697371745102, guid: b035333575c93454a9f8919a51d402df, type: 3}
+  enemyTest: {fileID: 3189155561585079386, guid: dda486c930b0c3640a01505886ed35f7, type: 3}
   spawnArea: {x: 15, y: 8}
   spawnTimer: 2
 --- !u!4 &1617427584

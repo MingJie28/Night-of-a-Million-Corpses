@@ -44,5 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ad80dae609ff24188f169ed1105ebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 8d5c7321814837d4ba2308222b079199, type: 2}
+  weaponStats:
+    damage: 0
+    timeToAttack: 0
   timeToAttack: 1.5
   knifePrefab: {fileID: 7616799241953936634, guid: 0dca2f6564d87464aba6094ffc341761, type: 3}
