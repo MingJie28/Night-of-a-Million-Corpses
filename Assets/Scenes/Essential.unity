@@ -2712,8 +2712,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08c7fe6d8ab719e46827f4273014a993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
-  armorTest: {fileID: 0}
+  items:
+  - {fileID: 11400000, guid: 52f6ee12992978048a1465c7f910c160, type: 2}
+  - {fileID: 11400000, guid: 2943900b65e8d7a4d9313ec1d4e29931, type: 2}
+  armorTest: {fileID: 11400000, guid: 2943900b65e8d7a4d9313ec1d4e29931, type: 2}
 --- !u!114 &773555308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5743,7 +5745,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0276244, y: 1}
+    m_SensorSize: {x: 2.8579767, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
