@@ -5,12 +5,16 @@ using UnityEngine;
 public class StatusBar : MonoBehaviour
 {
     [SerializeField] Transform bar;
+    private float currentHP;
 
-    public void SetState(int current, int max) 
+    public void Update()
     {
-        float state = (float)current;
-        state /= max;
-        if (state < 0f) { state = 0f; }
-        bar.transform.localScale = new Vector3(state, 1f, 1f);
+        bar.transform.localScale = new Vector3(currentHP, 0.05f,1f);
+        Debug.Log(currentHP);
+    }
+
+    public void SetState(float current, float max) 
+    {
+        this.currentHP = current/max;
     }
 }

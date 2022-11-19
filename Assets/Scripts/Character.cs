@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public int maxHp = 1000;
-    public int currentHp = 100;
+    public float maxHp;
+    public float currentHp;
 
     public int armor = 0;
 
-    [SerializeField] StatusBar hpBar;
+    public StatusBar hpBar;
 
     [HideInInspector] public Level level;
     [HideInInspector] public Coins coins;
@@ -25,6 +25,7 @@ public class Character : MonoBehaviour
     private void Start()
     {
         hpBar.SetState(currentHp, maxHp);
+        Debug.Log(currentHp + " " + maxHp);
     }
 
     public void TakeDamage(int damage) 
