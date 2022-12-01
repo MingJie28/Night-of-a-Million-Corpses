@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,5 +34,10 @@ public class PassiveItems : MonoBehaviour
     public void UnEquip(Item itemToUnEquip) 
     { 
         
+    }
+
+    internal void UpgradeItem(UpgradeData upgradeData)
+    {
+        throw new NotImplementedException();
     }
 }

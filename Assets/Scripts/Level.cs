@@ -14,21 +14,40 @@ public class Level : MonoBehaviour
 
     [SerializeField] List<UpgradeData> acquiredUpgrades;
 
+    WeaponManager weaponManager;
+    PassiveItems passiveItems;
+
+    [SerializeField] List<UpgradeData> upgradesAvailableOnStart;
+
+    private void Awake()
+    {
+        weaponManager = GetComponent<WeaponManager>();
+        passiveItems = GetComponent<PassiveItems>();
+    }
+
     int TO_LEVEL_UP
     {
-        get 
+        get
         {
             return level * 1000;
         }
+    }
+
+    internal void AddUpgradesIntoTheListOfAvailableUpgrades(List<UpgradeData> upgradesToAdd)
+    {
+        if (upgradesToAdd == null) { return; }
+
+        this.upgrades.AddRange(upgradesToAdd);
     }
 
     private void Start()
     {
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
         experienceBar.SetLevelText(level);
+        AddUpgradesIntoTheListOfAvailableUpgrades(upgradesAvailableOnStart);
     }
 
-    public void AddExperience(int amount) 
+    public void AddExperience(int amount)
     {
         experience += amount;
         CheckLevelUp();
@@ -41,11 +60,28 @@ public class Level : MonoBehaviour
 
         if (acquiredUpgrades == null) { acquiredUpgrades = new List<UpgradeData>(); }
 
+        switch (upgradeData.upgradeType)
+        {
+            case UpgradeType.WeaponUpgrade:
+                weaponManager.UpgradeWeapon(upgradeData);
+                break;
+            case UpgradeType.ItemUpgrade:
+                passiveItems.UpgradeItem(upgradeData);
+                break;
+            case UpgradeType.WeaponGet:
+                weaponManager.AddWeapon(upgradeData.weaponData);
+                break;
+            case UpgradeType.ItemGet:
+                passiveItems.Equip(upgradeData.item);
+                AddUpgradesIntoTheListOfAvailableUpgrades(upgradeData.item.upgrades);
+                break;
+        }
+
         acquiredUpgrades.Add(upgradeData);
         upgrades.Remove(upgradeData);
     }
 
-    public void CheckLevelUp() 
+    public void CheckLevelUp()
     {
         if (experience >= TO_LEVEL_UP)
         {
@@ -65,16 +101,16 @@ public class Level : MonoBehaviour
         experienceBar.SetLevelText(level);
     }
 
-    public List<UpgradeData> GetUpgrades(int count) 
+    public List<UpgradeData> GetUpgrades(int count)
     {
         List<UpgradeData> upgradeList = new List<UpgradeData>();
 
-        if (count > upgrades.Count) 
+        if (count > upgrades.Count)
         {
             count = upgrades.Count;
         }
 
-        for (int i = 0; i < count; i++) 
+        for (int i = 0; i < count; i++)
         {
             upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]);
         }

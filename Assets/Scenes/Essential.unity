@@ -1044,7 +1044,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 1512133809}
-  weapon: {fileID: 0}
 --- !u!1 &305322813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2067,7 +2066,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 2131802839}
-  weapon: {fileID: 0}
 --- !u!1 &554235695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,7 +2215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3058700890500376782, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
       propertyPath: weaponStats.damage
-      value: 35
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3058700890500376782, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
       propertyPath: weaponStats.timeToAttack
@@ -2766,20 +2764,28 @@ MonoBehaviour:
   experienceBar: {fileID: 1687079797}
   upgradePanel: {fileID: 573654561}
   upgrades:
-  - {fileID: 11400000, guid: 54a20fe220ca1c4449e39f16c0d58a56, type: 2}
-  - {fileID: 11400000, guid: 585a54f1289a5a34e8452faa49872055, type: 2}
-  - {fileID: 11400000, guid: 3252aa20090b47c448169dfaed7c799f, type: 2}
-  - {fileID: 11400000, guid: 54a20fe220ca1c4449e39f16c0d58a56, type: 2}
-  - {fileID: 11400000, guid: 585a54f1289a5a34e8452faa49872055, type: 2}
-  - {fileID: 11400000, guid: 3252aa20090b47c448169dfaed7c799f, type: 2}
-  - {fileID: 11400000, guid: 585a54f1289a5a34e8452faa49872055, type: 2}
-  - {fileID: 11400000, guid: 54a20fe220ca1c4449e39f16c0d58a56, type: 2}
-  - {fileID: 11400000, guid: 585a54f1289a5a34e8452faa49872055, type: 2}
-  - {fileID: 11400000, guid: 3252aa20090b47c448169dfaed7c799f, type: 2}
+  - {fileID: 11400000, guid: ebb8607756dcf4c4fb13c52c6df0e87d, type: 2}
+  - {fileID: 11400000, guid: 926a43d90edcc4f478f4beae11fd3527, type: 2}
+  - {fileID: 11400000, guid: 7b3251b59046a6a4ab9aad0cf988eed5, type: 2}
+  - {fileID: 11400000, guid: dabfdcdc64f85b04499e2749457b33dd, type: 2}
+  - {fileID: 11400000, guid: 5494abf963a0fe240a5f31983ea5ec5a, type: 2}
+  - {fileID: 11400000, guid: 6d0ee8f52b4143a4e973786cdef1e2ff, type: 2}
+  - {fileID: 11400000, guid: fcee1af334744c947ba761485dfc1421, type: 2}
+  - {fileID: 11400000, guid: 6d0ee8f52b4143a4e973786cdef1e2ff, type: 2}
+  - {fileID: 11400000, guid: 5494abf963a0fe240a5f31983ea5ec5a, type: 2}
+  - {fileID: 11400000, guid: 7b3251b59046a6a4ab9aad0cf988eed5, type: 2}
+  - {fileID: 11400000, guid: 7b3251b59046a6a4ab9aad0cf988eed5, type: 2}
+  - {fileID: 11400000, guid: 926a43d90edcc4f478f4beae11fd3527, type: 2}
+  - {fileID: 11400000, guid: ebb8607756dcf4c4fb13c52c6df0e87d, type: 2}
+  - {fileID: 11400000, guid: fcee1af334744c947ba761485dfc1421, type: 2}
+  - {fileID: 11400000, guid: 5494abf963a0fe240a5f31983ea5ec5a, type: 2}
+  - {fileID: 11400000, guid: 7b3251b59046a6a4ab9aad0cf988eed5, type: 2}
+  - {fileID: 11400000, guid: 6d0ee8f52b4143a4e973786cdef1e2ff, type: 2}
   acquiredUpgrades:
   - {fileID: 11400000, guid: 54a20fe220ca1c4449e39f16c0d58a56, type: 2}
   - {fileID: 11400000, guid: 585a54f1289a5a34e8452faa49872055, type: 2}
   - {fileID: 11400000, guid: 3252aa20090b47c448169dfaed7c799f, type: 2}
+  upgradesAvailableOnStart: []
 --- !u!114 &773555306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3242,17 +3248,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3058700890500376783, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
   m_PrefabInstance: {fileID: 568717586}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1063227358 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3058700890500376782, guid: da7be301f836c4e44b335f2ae03a19e0, type: 3}
-  m_PrefabInstance: {fileID: 568717586}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27391b9e34d3151458444cab0e5dabba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1096883883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3765,7 +3760,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 2108290421}
-  weapon: {fileID: 0}
 --- !u!1 &1162935165
 GameObject:
   m_ObjectHideFlags: 0
@@ -4478,7 +4472,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 472700338}
-  weapon: {fileID: 1063227358}
 --- !u!1 &1308141248
 GameObject:
   m_ObjectHideFlags: 0
@@ -5868,7 +5861,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0276244, y: 1}
+    m_SensorSize: {x: 3.0655737, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

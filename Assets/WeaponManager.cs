@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,15 +9,37 @@ public class WeaponManager : MonoBehaviour
 
     [SerializeField] WeaponData startingWeapon;
 
-    private void Start()
+    List<WeaponBase> weapons;
+
+    private void Awake()
     {
-        //AddWeapon(startingWeapon);
+        weapons = new List<WeaponBase>();
     }
 
-    public void AddWeapon(WeaponData weaponData) 
+    private void Start()
+    {
+        AddWeapon(startingWeapon);
+    }
+
+    public void AddWeapon(WeaponData weaponData)
     {
         GameObject weaponGameObject = Instantiate(weaponData.weaponBasePrefab, weaponObjectsContainer);
 
-        weaponGameObject.GetComponent<WeaponBase>().SetData(weaponData);
+        WeaponBase weaponBase = weaponGameObject.GetComponent<WeaponBase>();
+
+        weaponBase.SetData(weaponData);
+        weapons.Add(weaponBase);
+
+        Level level = GetComponent<Level>();
+        if (level != null)
+        {
+            level.AddUpgradesIntoTheListOfAvailableUpgrades(weaponData.upgrades);
+        }
+    }
+
+    internal void UpgradeWeapon(UpgradeData upgradeData)
+    {
+        WeaponBase weaponToUpgrade = weapons.Find(wd => wd.weaponData == upgradeData.weaponData);
+        weaponToUpgrade.Upgrade(upgradeData);
     }
 }

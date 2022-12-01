@@ -7,9 +7,8 @@ using UnityEngine.UI;
 public class UpgradeButton : MonoBehaviour
 {
     [SerializeField] Image icon;
-    public WhipWeapon weapon;
 
-    public void Set(UpgradeData upgradeData) 
+    public void Set(UpgradeData upgradeData)
     {
         icon.sprite = upgradeData.icon;
     }
@@ -17,16 +16,5 @@ public class UpgradeButton : MonoBehaviour
     internal void Clean()
     {
         icon.sprite = null;
-    }
-
-
-
-    public void upgradeWeapon(UpgradeData upgradeData)
-    {
-        string x = upgradeData.upgradeType.ToString();
-        if (x == "WeaponUpgrade")
-        {
-            weapon.weaponStats.damage += 5;
-        }
     }
 }
