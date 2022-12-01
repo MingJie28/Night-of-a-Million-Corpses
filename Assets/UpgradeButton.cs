@@ -17,15 +17,4 @@ public class UpgradeButton : MonoBehaviour
     {
         icon.sprite = null;
     }
-
-
-
-    public void upgradeWeapon(UpgradeData upgradeData)
-    {
-        string x = upgradeData.upgradeType.ToString();
-        if (x == "WeaponUpgrade")
-        {
-            weapon.weaponStats.damage += 15;
-        }
-    }
 }
